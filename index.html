@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+    }
+
+    #sell-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: hsl(30, 38%, 92%);
+      border-radius: 40px;
+      margin: 10%;
+      box-sizing: border-box; /* Ensure padding and border are included in width calculation */
+    }
+
+    #container-img {
+      position: relative;
+      width: calc(100% - 2px);
+      max-width: 375px;
+    }
+
+    #desktop-img {
+      width: 100%;
+      height: auto;
+      border-radius: 40px; /* Add rounded corners to desktop-img */
+    }
+
+    #mobile-img {
+      width: 100%;
+      height: auto;
+      border-radius: 40px; /* Add rounded corners to mobile-img */
+    }
+
+    #container-description {
+      text-align: center;
+      padding: 40px;
+    }
+
+    #preview-heading {
+      color: hsl(212, 21%, 14%);
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    #title {
+      color: hsl(212, 21%, 14%);
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    #description {
+      color: hsl(228, 12%, 48%);
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    #prices {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    #current-price {
+      color: hsl(158, 36%, 37%);
+      font-size: 28px;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    #before-price {
+      color: hsl(228, 12%, 48%);
+      text-decoration: line-through;
+    }
+
+    #add-to-cart {
+      width: 300px;
+      background-color: hsl(158, 36%, 37%);
+      color: hsl(0, 0%, 100%);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #add-to-cart:hover {
+      background-color: hsl(158, 46%, 47%); /* Adjust the hover background color as desired */
+    }
+
+    #add-to-cart:active {
+      background-color: hsl(158, 56%, 57%); /* Adjust the active background color as desired */
+    }
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      margin-top: 1%;
+      margin-bottom: 10%;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+      text-decoration: none;
+    }
+
+    /* Media queries for desktop and mobile */ 
+    @media (max-width: 768px) { 
+      #desktop-img { 
+        display: none; 
+      } 
+     
+      #mobile-img {
+        width: 100%; /* Set the width to the viewport width */
+        height: auto;
+        border-radius: 40px; /* Add rounded corners to mobile-img */
+        margin-left: calc(-50vw + 50%); /* Center the image horizontally */
+        margin-right: calc(-50vw + 50%);
+      }
+    } 
+
+    @media (min-width: 769px) { 
+      #mobile-img { 
+        display: none; 
+      } 
+      #sell-item {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      #container-img {
+        margin-bottom: 0;
+        margin-right: 10px;
+        flex: 0 0 auto;
+        width: 250px;
+      }
+
+      #container-description {
+        text-align: left;
+        flex: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="sell-item">
+    <div id="container-img">
+      <img id="desktop-img" src="./images/image-product-desktop.jpg" alt="image product desktop">
+      <img id="mobile-img" src="./images/image-product-mobile.jpg" alt="image product mobile">
+    </div>
+
+    <div id="container-description">
+      <h4 id="preview-heading">Perfume</h4>
+      <h2 id="title">Gabrielle Essence Eau De Parfum</h2>
+
+      <p id="description">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
+
+      <div id="prices">
+        <div id="current-price">$149.99</div>
+        <div id="before-price">$169.99</div>
+      </div>
+
+      <button id="add-to-cart">
+        <span class="icon">&#128722;</span>
+        Add to Cart
+      </button>
+      
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Sandro</a>.
+  </div>
+</body>
+</html>
